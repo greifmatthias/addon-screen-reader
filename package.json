@@ -1,6 +1,6 @@
 {
   "name": "@greifmatthias/addon-screen-reader",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Screen Reader Storybook addon for accessibility testing",
   "type": "module",
   "keywords": [
@@ -60,6 +60,7 @@
   "scripts": {
     "prebuild": "node -e \"import('node:fs').then(fs => fs.rmSync('./dist', { recursive: true, force: true }))\"",
     "build": "esbuild src/register.js --bundle --outfile=dist/register.js --format=esm --external:storybook --external:storybook/* --external:react --external:react-dom --platform=browser --loader:.js=jsx",
+    "prepare": "npm run build",
     "test": "echo 'no tests specified'"
   }
 }
