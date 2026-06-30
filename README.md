@@ -90,15 +90,19 @@ yarn add storybook-screen-reader
 
 ## Setup
 
-Add the addon to your `.storybook/main.js`:
+Add the addon to your `.storybook/main.ts`:
 
-```js
-module.exports = {
+```ts
+import type { StorybookConfig } from 'storybook/internal/types';
+
+const config: StorybookConfig = {
   addons: [
     // ... other addons
     'storybook-screen-reader',
   ],
 };
+
+export default config;
 ```
 
 ## Usage
@@ -198,9 +202,11 @@ This addon is a **development aid**, not a replacement for testing with real scr
 
 ## Compatibility
 
-- Storybook 8.x
+- Storybook 10.x
 - React, Vue, Angular, Web Components, HTML
 - Works with Shadow DOM
+
+> **Note:** Version 2.x requires Storybook 10. For Storybook 8.x, use version 1.x.
 
 ## Contributing
 
